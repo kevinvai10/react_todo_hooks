@@ -9,6 +9,7 @@ const TodoList = ({ todos, removeTodo, toggleTodo, editTodo }) => {
             <Paper>
             {
                 todos && todos.map(todo => {
+                    console.log('each task' , todo.task)
                     return (
                     <React.Fragment key={todo.id}>
                         <TodoItem 

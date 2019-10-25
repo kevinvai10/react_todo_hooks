@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useLocalStorageState from '../hooks/useLocalStorageState'
 import TodoList from '../components/TodoList/TodoList'
 import TodoForm from '../components/TodoForm/TodoForm'
@@ -10,10 +10,6 @@ import Grid from '@material-ui/core/Grid'
 import uuid from 'uuid/v4'
 
 const TodoPage = () => {
-    /*const initialTodos = [
-        { id: 1, task: 'clean fishtank', completed: false }
-    ]*/
-    //const initialTodos = JSON.parse(localStorage.getItem('todos')) || '[]';
     const [todos, setTodos] = useLocalStorageState('todos', []);
 
     const addTodo = newTodoText => {
