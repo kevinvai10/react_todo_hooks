@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import useInputState from '../../hooks/useInputState'
 
-const EditTodoForm = ( id, editTodo, task, toggleEditForm ) => {
+const EditTodoForm = ({ id, editTodo, task, toggleEditForm }) => {
     const [value, handleChange, reset] = useInputState(task)
     const handleSubmit = e => {
         e.preventDefault();

@@ -1,12 +1,15 @@
-import { useState, useEffect } from 'react'
+import {
+    useState,
+    useEffect
+} from 'react'
 
-function useLocalStorageState (key, defaultVal) {
+function useLocalStorageState(key, defaultVal) {
     //make piece of state based off of value in local storage
     const [state, setState] = useState(() => {
         let val;
-
-        try{
-            JSON.parse(localStorage.getItem(key)) || String(defaultVal)
+        const localStorageTodos = (localStorage.getItem(key) !== 'undefined') ? localStorage.getItem(key) : false
+        try {
+            val = JSON.parse(localStorageTodos) || defaultVal
         } catch {
             val = defaultVal;
         }
@@ -15,8 +18,8 @@ function useLocalStorageState (key, defaultVal) {
     // use effect to update localstorage
     useEffect(() => {
         localStorage.setItem(key, JSON.stringify(state))
-    }, [state])
-    
+    })
+
     return [state, setState];
 }
 

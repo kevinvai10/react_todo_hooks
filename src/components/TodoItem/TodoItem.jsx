@@ -1,5 +1,5 @@
 import React from 'react'
-import useToggleState from '../../hooks/useInputState'
+import useToggleState from '../../hooks/useToggle'
 import EditTodoForm from '../EditTodoForm/EditTodoForm'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
